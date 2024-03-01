@@ -1,5 +1,5 @@
 <script setup>
-import { reactive } from 'vue';
+  import { reactive } from 'vue';
   import Cabecalho from './components/Cabecalho.vue'
   import Formulario from './components/Formulario.vue'
   import ListaDeTarefas from './components/ListaDeTarefas.vue'
@@ -17,8 +17,8 @@ import { reactive } from 'vue';
         finalizada: false,
       },
       {
-      titulo: 'Ir para a academia',
-      finalizada: true,
+        titulo: 'Ir para a academia',
+        finalizada: true,
       }
     ]
   })
@@ -57,13 +57,8 @@ import { reactive } from 'vue';
 <template>
   <div class="container">
     <Cabecalho :tarefas-pendentes="getTarefasPendentes().length" />
-    <Formulario :trocar-filtro="evento => estado.filtro = evento.target.value" :tarefa-temp="estado.tarefaTemp" :edita-tarefa-temp="evento => estado.tarefatemp = evento.target.value" :cadastra-tarefa="cadastraTarefa" />
+    <Formulario :trocar-filtro="evento => estado.filtro = evento.target.value" :tarefa-temp="estado.tarefaTemp" :edita-tarefa-temp="evento => estado.tarefaTemp = evento.target.value" :cadastra-tarefa="cadastraTarefa" />
     <ListaDeTarefas :tarefas="getTarefasFiltradas()" />
   </div>
 </template>
 
-<style scoped>
-.done {
-  text-decoration: line-through;
-}
-</style>
